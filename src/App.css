@@ -5,6 +5,7 @@
 
 .app-square {
   border   : 2px solid #ffffff;
+  box-shadow: 0 0px 40px rgb(255 255 255 / 40%), 0 14px 40px rgb(162 162 162 / 10%);
   display  : flex;
   flex-wrap: wrap;
   height   : 45vmin;
@@ -40,6 +41,16 @@
 
 .item-value {
   font-size: 2.5rem;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+}
+
+.opacity-enabled {
+  opacity: 1;
 }
 
 @keyframes App-logo-spin {

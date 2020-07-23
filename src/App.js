@@ -32,7 +32,10 @@ class App extends Component {
         current_array[winner_line[2]] === last_click_value) {
 
         setTimeout(() => {
-          alert(last_click_value + " WIN!!!")
+          alert(last_click_value + " WIN!!!");
+          document.querySelectorAll('.item-value').forEach(el=>{if(el.classList.contains('opacity-enabled')){
+            el.classList.remove('opacity-enabled');
+          }});;
           this.setState({
             square: Array(9).fill(null),
             counter: 0
@@ -66,11 +69,13 @@ class App extends Component {
     let current_value = event.target.getAttribute('data');
     let current_square_array = this.state.square;
 
-
+console.log(event.target);
     if (!current_square_array[current_value]) {
       if (this.state.counter % 2 === 0) {
+        event.target.querySelector('.item-value').classList += ' opacity-enabled';
         current_square_array[current_value] = "X"
       } else {
+        event.target.querySelector('.item-value').classList += ' opacity-enabled';
         current_square_array[current_value] = "O"
       }
       this.setState({ counter: this.state.counter + 1 })
