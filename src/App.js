@@ -45,7 +45,7 @@ class App extends Component {
                 el.classList.remove('opacity-enabled');
               }
             });
-          }, 3000)
+          }, 5000)
 
         }, 500)
       }
@@ -79,7 +79,7 @@ class App extends Component {
             counter: 0
           });
           this.gameMessageRemove();
-        }, 3000)
+        }, 5000)
 
       }, 500)
     }
