@@ -17,7 +17,7 @@ class App extends Component {
       [1, 4, 7],
       [2, 5, 8],
       [0, 4, 8],
-      [3, 4, 6],
+      [2, 4, 6],
     ];
   }
   isWinner = (value, current_array) => {
@@ -33,7 +33,7 @@ class App extends Component {
 
         setTimeout(() => {
           this.gameMessageAdd(`${last_click_value} win!!! Try Once Again! `)
-         
+
           setTimeout(() => {
             this.setState({
               square: Array(9).fill(null),
@@ -63,7 +63,7 @@ class App extends Component {
     document.querySelector('.notification').classList.remove('opacity-enabled');
   }
 
-  checkEmptyFilelds = current_square_array => {
+  checkEmptyFields = current_square_array => {
     let count = 0;
     for (let index = 0; index < current_square_array.length; index++) {
       if (current_square_array[index] === null) {
@@ -106,7 +106,7 @@ class App extends Component {
     }
 
     this.isWinner(current_value, current_square_array);
-    this.checkEmptyFilelds(current_square_array);
+    this.checkEmptyFields(current_square_array);
   }
   render () {
     return (
