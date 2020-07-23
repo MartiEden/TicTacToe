@@ -65,12 +65,16 @@ class App extends Component {
 
   checkEmptyFields = current_square_array => {
     let count = 0;
+    let notification = document.querySelector('.notification');
+    console.log(!notification);
+
     for (let index = 0; index < current_square_array.length; index++) {
       if (current_square_array[index] === null) {
         count++;
       }
     }
-    if (count === 0) {
+
+    if (this.state.counter === 8 && count === 0 && !notification) {
       setTimeout(() => {
         this.gameMessageAdd("DRAW !!! Try Once Again")
         setTimeout(() => {
@@ -119,7 +123,7 @@ class App extends Component {
             }
           </div>
 
-          <span class="notification">{this.state.message}</span>
+          <span className="notification">{this.state.message}</span>
         </header>
 
       </div>
